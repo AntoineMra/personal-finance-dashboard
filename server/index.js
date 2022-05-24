@@ -1,4 +1,5 @@
 // Vars
+const dotenv = require('dotenv')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -22,6 +23,13 @@ const options = {
   apis: ['./routes*.js'],
 }
 
+// Select the env file
+
+if (process.env.NODE_ENV === 'development') {
+  dotenv.config({ path: process.cwd() + '/config/.env.development' })
+} else if (process.env.NODE_ENV === 'test') {
+  dotenv.config()
+}
 const PORT = process.env.API_PORT || 5000
 
 app.listen(PORT, () => {
