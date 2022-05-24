@@ -1,4 +1,4 @@
-# Inventory-cook-app
+# Seo project
 
 Handling seo project.
 
