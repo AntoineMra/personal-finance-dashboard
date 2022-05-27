@@ -8,7 +8,6 @@ Handling seo project.
 
 | Runtime / Software |
 | ------------------ |
-| Node js 16.12.2    |
 | Docker             |
 | Docker Compose     |
 
