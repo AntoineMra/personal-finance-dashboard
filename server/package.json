@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon server/index.js",
-    "test": "NODE_ENV=test nodemon server/index.js"
+    "dev": "NODE_ENV=development nodemon -L server/index.js",
+    "test": "NODE_ENV=test nodemon -L server/index.js"
   },
   "keywords": [],
   "author": "Antoine Marionneau",
