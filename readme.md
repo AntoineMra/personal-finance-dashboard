@@ -1,6 +1,4 @@
-# Seo project
-
-Handling seo project.
+# Template Docker Node Vue
 
 # Installation guide
 
