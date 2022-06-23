@@ -45,3 +45,4 @@ app.use(
   })
 )
 app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification))
+require('./routes/routesInvest')(app)

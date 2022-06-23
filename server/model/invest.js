@@ -1,8 +1,8 @@
-import db from 'database'
 const { Sequelize, DataTypes } = require('sequelize')
-import Support from 'support'
+const Support = require('./support')
+const database = require('../database')
 
-const Invest = db.define(
+exports.Invest = database.seq.define(
   'Invest',
   {
     uuid: {
@@ -21,13 +21,12 @@ const Invest = db.define(
     },
     monthlyInvest: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     supportId: {
       type: DataTypes.INTEGER,
 
       references: {
-        model: Support,
+        model: Support.Support,
         key: 'uuid',
       },
     },
@@ -36,5 +35,3 @@ const Invest = db.define(
     // Other model options go here
   }
 )
-
-module.exports = Invest

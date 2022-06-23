@@ -1,7 +1,7 @@
-import db from 'database'
+const database = require('../database')
 const { Sequelize, DataTypes } = require('sequelize')
 
-const Support = db.define(
+exports.Support = database.seq.define(
   'Support',
   {
     uuid: {
@@ -23,5 +23,3 @@ const Support = db.define(
     // Other model options go here
   }
 )
-
-module.exports = Support
