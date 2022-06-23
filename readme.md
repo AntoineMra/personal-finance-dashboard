@@ -1,4 +1,4 @@
-# Template Docker Node Vue
+# Personal Finance Dashboard
 
 # Installation guide
 
@@ -15,23 +15,8 @@
 docker-compose up
 ```
 
-## Start the express Api
+## Go to the client and track your money
 
 ```sh
-cd api/
-npm install
-npm run dev
-```
-
-## Install the client
-
-```sh
-cd client/
-npm install
-```
-
-## Start the client
-
-```sh
-npm start
+http://localhost:3000/
 ```
