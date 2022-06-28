@@ -1,9 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize')
 const database = require('../database')
-const Category = require('./category')
 
-const Support = database.seq.define(
-  'Support',
+const Category = database.seq.define(
+  'Category',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,19 +13,10 @@ const Support = database.seq.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    categoryId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-
-      references: {
-        model: Category,
-        key: 'id',
-      },
-    },
   },
   {
     timestamps: false,
   }
 )
 
-module.exports = Support
+module.exports = Category

@@ -2,12 +2,11 @@ const { Sequelize, DataTypes } = require('sequelize')
 const Support = require('./support')
 const database = require('../database')
 
-exports.Invest = database.seq.define(
+const Invest = database.seq.define(
   'Invest',
   {
-    uuid: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV1,
+    id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -24,14 +23,17 @@ exports.Invest = database.seq.define(
     },
     supportId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
 
       references: {
-        model: Support.Support,
-        key: 'uuid',
+        model: Support,
+        key: 'id',
       },
     },
   },
   {
-    // Other model options go here
+    timestamps: false,
   }
 )
+
+module.exports = Invest
