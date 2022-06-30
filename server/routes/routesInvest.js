@@ -1,8 +1,20 @@
+const Invest = require('../controller/controllerInvest')
+
+/**
+ * @swagger
+ * /invests:
+ *    get:
+ *      description: Returns all investments
+ *      responses:
+ *        '200':
+ *          description: Successfully returned all investments
+ *        '500':
+ *          description: Failed to query for investments
+ */
+
 module.exports = (app) => {
-  const Invest = require('../controller/controllerInvest')
   let router = require('express').Router()
 
   router.get('/invests', Invest.findAllInvests)
-  // router.get('/invest/:id', Invest.findClient)
   app.use('/api', router)
 }

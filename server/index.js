@@ -20,7 +20,7 @@ const options = {
       version: '1.0.0',
     },
   },
-  apis: ['./routes*.js'],
+  apis: ['./routes/*.js'],
 }
 
 // Select the env file
