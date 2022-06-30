@@ -44,6 +44,7 @@ app.use(
     origin: '*',
   })
 )
-app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification))
 require('./routes/routesInvest')(app)
 require('./routes/routesCategory')(app)
+
+app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification))
