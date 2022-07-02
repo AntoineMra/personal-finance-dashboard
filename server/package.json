@@ -1,11 +1,11 @@
 {
-  "name": "docker-node-vue",
+  "name": "personal-finance-dashboard",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon -L server/index.js",
-    "test": "NODE_ENV=test nodemon -L server/index.js"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Antoine Marionneau",
@@ -20,5 +20,15 @@
     "sequelize": "^6.19.2",
     "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.4.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "supertest": "^6.2.4"
   }
 }

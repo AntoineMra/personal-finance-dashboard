@@ -27,8 +27,6 @@ const options = {
 
 if (process.env.NODE_ENV === 'development') {
   dotenv.config({ path: process.cwd() + '/config/.env.development' })
-} else if (process.env.NODE_ENV === 'test') {
-  dotenv.config()
 }
 const PORT = process.env.API_PORT || 5000
 
@@ -36,7 +34,6 @@ app.listen(PORT, () => {
   console.log(`server listen on port ${PORT}`)
 })
 
-// Serve the app with swagger on / route
 const openapiSpecification = swaggerJsdoc(options)
 
 app.use(
@@ -47,4 +44,7 @@ app.use(
 require('./routes/routesInvest')(app)
 require('./routes/routesCategory')(app)
 
+// Serve the app with swagger on / route
 app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification))
+
+module.exports = { options, openapiSpecification, PORT }
