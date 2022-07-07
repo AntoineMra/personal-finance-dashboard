@@ -21,30 +21,13 @@ const Expense = database.seq.define(
       type: DataTypes.FLOAT,
       allowNull: false,
     },
-
-    categoryId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-
-      references: {
-        model: Category,
-        key: 'id',
-      },
-    },
-
-    budgetId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-
-      references: {
-        model: Budget,
-        key: 'id',
-      },
-    },
   },
   {
     timestamps: false,
   }
 )
+
+Category.hasMany(Expense)
+Expense.hasOne(Category)
 
 module.exports = Expense
