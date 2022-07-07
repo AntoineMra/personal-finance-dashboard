@@ -43,7 +43,7 @@ app.use(
 )
 require('./routes/invest')(app)
 require('./routes/support')(app)
-require('./routes/category')(app)
+require('./routes/type')(app)
 
 // Serve the app with swagger on / route
 app.use('/', swaggerUi.serve, swaggerUi.setup(openapiSpecification))

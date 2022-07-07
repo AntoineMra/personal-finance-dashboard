@@ -1,9 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize')
-const Support = require('./support')
 const database = require('../database')
+const Budget = require('./budget')
+const Category = require('./category')
 
-const Invest = database.seq.define(
-  'Invest',
+const Expense = database.seq.define(
+  'Expense',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,31 +12,32 @@ const Invest = database.seq.define(
       autoIncrement: true,
     },
 
-    initialAmount: {
-      type: DataTypes.INTEGER,
+    date: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+
+    amount: {
+      type: DataTypes.FLOAT,
       allowNull: false,
     },
 
-    currentAmount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-
-    returnAmount: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-
-    monthlyInvest: {
-      type: DataTypes.INTEGER,
-    },
-
-    supportId: {
+    categoryId: {
       type: DataTypes.INTEGER,
       allowNull: false,
 
       references: {
-        model: Support,
+        model: Category,
+        key: 'id',
+      },
+    },
+
+    budgetId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+
+      references: {
+        model: Budget,
         key: 'id',
       },
     },
@@ -45,7 +47,4 @@ const Invest = database.seq.define(
   }
 )
 
-Support.hasMany(Invest)
-Invest.hasOne(Support)
-
-module.exports = Invest
+module.exports = Expense

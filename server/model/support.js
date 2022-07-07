@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize')
 const database = require('../database')
-const Category = require('./category')
+const Type = require('./type')
 
 const Support = database.seq.define(
   'Support',
@@ -14,12 +14,12 @@ const Support = database.seq.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    categoryId: {
+    typeId: {
       type: DataTypes.INTEGER,
       allowNull: false,
 
       references: {
-        model: Category,
+        model: Type,
         key: 'id',
       },
     },
@@ -28,5 +28,8 @@ const Support = database.seq.define(
     timestamps: false,
   }
 )
+
+Type.hasMany(Support)
+Support.hasOne(Type)
 
 module.exports = Support

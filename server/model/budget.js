@@ -1,20 +1,28 @@
 const { Sequelize, DataTypes } = require('sequelize')
 const database = require('../database')
+const Expense = require('./expense')
+const Income = require('./income')
 
-const Category = database.seq.define(
-  'Category',
+const Budget = database.seq.define(
+  'Budget',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
 
-    type: {
+    month: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    year: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -24,4 +32,10 @@ const Category = database.seq.define(
   }
 )
 
-module.exports = Category
+Budget.hasMany(Expense)
+Expense.hasOne(Budget)
+
+Budget.hasMany(Income)
+Income.hasOne(Budget)
+
+module.exports = Budget
