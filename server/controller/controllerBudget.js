@@ -7,3 +7,13 @@ exports.findAllBudgets = (req, res) => {
     res.send(data)
   })
 }
+
+exports.findBudget = (req, res) => {
+  Budget.findAll({
+    where: {
+      id: req.param('id'),
+    },
+  }).then((data) => {
+    res.send(data)
+  })
+}
