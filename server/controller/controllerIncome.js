@@ -7,3 +7,13 @@ exports.findAllIncomes = (req, res) => {
     res.send(data)
   })
 }
+
+exports.findIncome = (req, res) => {
+  Income.findAll({
+    where: {
+      id: req.param('id'),
+    },
+  }).then((data) => {
+    res.send(data)
+  })
+}

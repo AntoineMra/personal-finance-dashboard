@@ -7,3 +7,13 @@ exports.findAllTypes = (req, res) => {
     res.send(data)
   })
 }
+
+exports.findType = (req, res) => {
+  Type.findAll({
+    where: {
+      id: req.param('id'),
+    },
+  }).then((data) => {
+    res.send(data)
+  })
+}

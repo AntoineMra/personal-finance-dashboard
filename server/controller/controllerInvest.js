@@ -7,3 +7,13 @@ exports.findAllInvests = (req, res) => {
     res.send(data)
   })
 }
+
+exports.findInvest = (req, res) => {
+  Invest.findAll({
+    where: {
+      id: req.param('id'),
+    },
+  }).then((data) => {
+    res.send(data)
+  })
+}

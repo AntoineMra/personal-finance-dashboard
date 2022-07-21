@@ -7,3 +7,13 @@ exports.findAllSupports = (req, res) => {
     res.send(data)
   })
 }
+
+exports.findSupport = (req, res) => {
+  Support.findAll({
+    where: {
+      id: req.param('id'),
+    },
+  }).then((data) => {
+    res.send(data)
+  })
+}

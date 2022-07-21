@@ -7,3 +7,13 @@ exports.findAllExpenses = (req, res) => {
     res.send(data)
   })
 }
+
+exports.findExpense = (req, res) => {
+  Expense.findAll({
+    where: {
+      id: req.param('id'),
+    },
+  }).then((data) => {
+    res.send(data)
+  })
+}

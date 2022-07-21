@@ -35,5 +35,56 @@ module.exports = (app) => {
    */
   router.get('/budget/:id', Budget.findBudget)
 
+  /**
+   * @swagger
+   * /budget:
+   *    post:
+   *      description: Add a budget
+   *      responses:
+   *        '200':
+   *          description: Successfully add a budget
+   *        '500':
+   *          description: Failed to add a budget
+   */
+  router.post('/budget', Budget.addBudget)
+
+  /**
+   * @swagger
+   * /budget/{id}:
+   *    put:
+   *      description: Update a budget
+   *      parameters:
+   *        name: id
+   *        schema:
+   *          type: integer
+   *        required: true
+   *        description: Numeric ID of the budget to get
+   *      responses:
+   *        '200':
+   *          description: Successfully update a budget
+   *        '500':
+   *          description: Failed to update for a budget
+   */
+  router.put('/budget/:id', Budget.updateBudget)
+
+  /**
+   * @swagger
+   * /budget/{id}:
+   *    delete:
+   *      description: Delete a budget
+   *      parameters:
+   *        name: id
+   *        schema:
+   *          type: integer
+   *        required: true
+   *        description: Numeric ID of the budget to get
+   *      responses:
+   *        '200':
+   *          description: Successfully delete a budget
+   *        '500':
+   *          description: Failed to delete for a budget
+   */
+  router.delete('/budget/:id', Budget.deleteBudget)
+
   app.use('/api', router)
 }
