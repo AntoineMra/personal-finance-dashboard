@@ -25,6 +25,12 @@ services:
       - database
     depends_on:
       - database
+  client:
+    build: ./client
+    ports:
+      - "8080:8080"
+    volumes:
+      - /usr/src/client/node_modules
 volumes:
   personal_finance:
     
