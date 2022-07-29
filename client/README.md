@@ -1,4 +1,4 @@
-# seo-project
+# Finance Project
 
 ## Project setup
 ```
