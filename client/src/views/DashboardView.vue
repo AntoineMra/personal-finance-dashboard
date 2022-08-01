@@ -6,8 +6,8 @@
     <section class="flex items-center justify-between gap-40">
       <last-month />
       <div class="basis-5/12">
-        <medium-income />
-        <medium-expense />
+        <medium-transac transac-type="Dépenses"/>
+        <medium-transac transac-type="Revenus"/>
       </div>
     </section>
   </div>
@@ -16,8 +16,7 @@
 <script setup lang="ts">
 
 import LastMonth from "@/components/dashboard/LastMonth.vue";
-import MediumIncome from "../components/dashboard/MediumIncome.vue";
-import MediumExpense from "../components/dashboard/MediumExpense.vue";
+import MediumTransac from "../components/dashboard/MediumTransac.vue";
 
 </script>
 
@@ -29,4 +28,13 @@ import MediumExpense from "../components/dashboard/MediumExpense.vue";
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .glass{
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+	}
 </style>

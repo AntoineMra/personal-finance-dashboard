@@ -1,8 +1,8 @@
 <template>
 	<div class="flex items-center justify-between pb-4">
 		<div class="items-center">
-			<select name="" id="">
-				<option value="Catégories" selected>Catégories</option>
+			<select class="p-2 rounded-lg outline-none" name="" id="">
+				<option npm run servevalue="Catégories" selected>Catégories</option>
 			</select>
 		</div>
 		<div class="flex items-center justify-between">
@@ -13,11 +13,8 @@
 						d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
 						clip-rule="evenodd" />
 				</svg>
-				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="" placeholder="search...">
+				<input class="bg-gray-50 outline-none ml-1 block " type="text" name="" id="" placeholder="Search...">
 			</div>
-		</div>
-		<div class="px-4">
-			<button class="bg-purple-600 px-4 py-2 rounded-md text-white font-bold cursor-pointer">New Report</button>
 		</div>
 	</div>
 </template>
