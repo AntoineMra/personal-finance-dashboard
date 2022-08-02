@@ -23,8 +23,13 @@ const Income = database.seq.define(
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
+    createdAt: 'createdAt',
+    updatedAt: false,
   }
 )
+
+Category.hasMany(Income)
+Income.belongsTo(Category)
 
 module.exports = Income

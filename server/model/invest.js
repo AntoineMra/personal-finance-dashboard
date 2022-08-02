@@ -29,23 +29,15 @@ const Invest = database.seq.define(
     monthlyInvest: {
       type: DataTypes.INTEGER,
     },
-
-    supportId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-
-      references: {
-        model: Support,
-        key: 'id',
-      },
-    },
   },
   {
-    timestamps: false,
+    timestamps: true,
+    createdAt: 'createdAt',
+    updatedAt: false,
   }
 )
 
 Support.hasMany(Invest)
-Invest.hasOne(Support)
+Invest.belongsTo(Support)
 
 module.exports = Invest
