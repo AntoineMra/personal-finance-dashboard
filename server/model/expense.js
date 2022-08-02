@@ -23,11 +23,13 @@ const Expense = database.seq.define(
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
+    createdAt: 'createdAt',
+    updatedAt: false,
   }
 )
 
 Category.hasMany(Expense)
-Expense.hasOne(Category)
+Expense.belongsTo(Category)
 
 module.exports = Expense

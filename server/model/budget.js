@@ -33,9 +33,9 @@ const Budget = database.seq.define(
 )
 
 Budget.hasMany(Expense)
-Expense.hasOne(Budget)
+Expense.belongsTo(Budget)
 
 Budget.hasMany(Income)
-Income.hasOne(Budget)
+Income.belongsTo(Budget)
 
 module.exports = Budget
