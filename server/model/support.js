@@ -15,7 +15,7 @@ const Support = database.seq.define(
     },
 
     name: {
-      type: DataTypes.ENUM('Finance', 'Physique'),
+      type: DataTypes.ENUM('Finance', 'Immobilier'),
       allowNull: false,
     },
   },

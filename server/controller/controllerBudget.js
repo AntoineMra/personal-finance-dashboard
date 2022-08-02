@@ -25,15 +25,12 @@ exports.addBudget = async (req, res) => {
 }
 
 exports.updateBudget = async (req, res) => {
-  const budget = await Budget.findAll({
+  await Budget.update(req.body, {
     where: {
       id: req.params.id,
     },
   })
-  console.log(budget)
-  budget.set(req.body)
-  await budget.save()
-  return res.status(201).json({ success: true, data: budget })
+  return res.status(201).json({ success: true })
 }
 
 exports.deleteBudget = async (req, res) => {
