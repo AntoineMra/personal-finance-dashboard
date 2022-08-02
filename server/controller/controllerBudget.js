@@ -34,7 +34,7 @@ exports.updateBudget = async (req, res) => {
 }
 
 exports.deleteBudget = async (req, res) => {
-  const budget = await Budget.findAll({
+  const budget = await Budget.findOne({
     where: {
       id: req.param('id'),
     },
