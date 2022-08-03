@@ -36,5 +36,56 @@ module.exports = (app) => {
    */
   router.get('/support/:id', Support.findSupport)
 
+  /**
+   * @swagger
+   * /support:
+   *    post:
+   *      description: Add a support
+   *      responses:
+   *        '200':
+   *          description: Successfully add a support
+   *        '500':
+   *          description: Failed to add a support
+   */
+  router.post('/support', Support.addSupport)
+
+  /**
+   * @swagger
+   * /support/{id}:
+   *    put:
+   *      description: Update a support
+   *      parameters:
+   *        name: id
+   *        schema:
+   *          type: integer
+   *        required: true
+   *        description: Numeric ID of the support to get
+   *      responses:
+   *        '200':
+   *          description: Successfully update a support
+   *        '500':
+   *          description: Failed to update for a support
+   */
+  router.put('/support/:id', Support.updateSupport)
+
+  /**
+   * @swagger
+   * /support/{id}:
+   *    delete:
+   *      description: Delete a support
+   *      parameters:
+   *        name: id
+   *        schema:
+   *          type: integer
+   *        required: true
+   *        description: Numeric ID of the support to get
+   *      responses:
+   *        '200':
+   *          description: Successfully delete a support
+   *        '500':
+   *          description: Failed to delete for a support
+   */
+  router.delete('/support/:id', Support.deleteSupport)
+
   app.use('/api', router)
 }

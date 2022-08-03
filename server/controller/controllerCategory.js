@@ -9,7 +9,7 @@ exports.findAllCategories = (req, res) => {
 }
 
 exports.findCategory = (req, res) => {
-  Category.findAll({
+  Category.findOne({
     where: {
       id: req.param('id'),
     },
@@ -25,18 +25,16 @@ exports.addCategory = async (req, res) => {
 }
 
 exports.updateCategory = async (req, res) => {
-  const category = await Category.findAll({
+  await Category.update(req.body, {
     where: {
-      id: req.param('id'),
+      id: req.params.id,
     },
   })
-  category.set(req.body)
-  await category.save()
-  return res.status(201).json({ success: true, data: category })
+  return res.status(201).json({ success: true })
 }
 
 exports.deleteCategory = async (req, res) => {
-  const category = await Category.findAll({
+  const category = await Category.findOne({
     where: {
       id: req.param('id'),
     },

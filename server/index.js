@@ -44,6 +44,7 @@ app.use(
 require('./routes/invest')(app)
 require('./routes/support')(app)
 require('./routes/budget')(app)
+require('./routes/goal')(app)
 require('./routes/category')(app)
 require('./routes/expense')(app)
 require('./routes/income')(app)

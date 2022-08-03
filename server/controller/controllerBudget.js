@@ -9,7 +9,7 @@ exports.findAllBudgets = (req, res) => {
 }
 
 exports.findBudget = (req, res) => {
-  Budget.findAll({
+  Budget.findOne({
     where: {
       id: req.param('id'),
     },

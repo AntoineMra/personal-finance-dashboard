@@ -17,6 +17,11 @@ const Income = database.seq.define(
       allowNull: true,
     },
 
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     amount: {
       type: DataTypes.FLOAT,
       allowNull: false,
